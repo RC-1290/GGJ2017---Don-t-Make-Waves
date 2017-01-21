@@ -41,19 +41,4 @@ public class Mood : MonoBehaviour {
         moodColorMat.SetFloat(materialMoodId, angriness);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (director.isPlayerLayer(other.gameObject.layer))
-        {
-            hittingPlayer = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (director.isPlayerLayer(other.gameObject.layer))
-        {
-            hittingPlayer = false;
-        }
-    }
 }

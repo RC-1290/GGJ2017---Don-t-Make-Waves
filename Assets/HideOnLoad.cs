@@ -3,7 +3,7 @@
 public class HideOnLoad : MonoBehaviour {
 
 	void Start () {
-        gameObject.active = false;
+        gameObject.SetActive(false);
 	}
 	
 		
