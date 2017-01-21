@@ -36,9 +36,14 @@ public class Mood : MonoBehaviour {
         }
     }
 
+    protected bool isPlayerLayer(int gameObjectLayerNumber)
+    {
+        return ((1 << gameObjectLayerNumber) & playerLayer.value) > 0;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (((1 << other.gameObject.layer) & playerLayer.value) > 0)
+        if (isPlayerLayer(other.gameObject.layer))
         {
             hittingPlayer = true;
         }
@@ -46,7 +51,7 @@ public class Mood : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.layer == playerLayer)
+        if (isPlayerLayer(other.gameObject.layer))
         {
             hittingPlayer = false;
         }
