@@ -1,28 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class PushOver : MonoBehaviour {
 
+	public GameDirector director;
+
 	protected Rigidbody rb;
 	protected NavMeshAgent agent;
 
-	public GameDirector director;
+	protected bool physicsMode = false;
 
 	private void Start()
 	{
 		rb = GetComponent<Rigidbody>();
 		agent = GetComponent<NavMeshAgent>();
 	}
-
-	private void OnCollisionEnter(Collision collision)
+	public void TurnToPhysics()
 	{
-		if (director.isPlayerLayer( collision.gameObject.layer ))
+		if (!physicsMode)
 		{
 			agent.enabled = false;
 			rb.useGravity = true;
 			director.DudeGotAngry();
+			physicsMode = true;
 		}
 	}
 
