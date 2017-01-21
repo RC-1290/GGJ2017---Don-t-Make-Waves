@@ -31,7 +31,6 @@ public class GameDirector : MonoBehaviour {
         }
 		if (gameOver)
 		{
-			Debug.Log("Trigger value:" +Input.GetAxis(LeftTriggerAxisName));
 			if (Input.GetAxis(LeftTriggerAxisName) >= 1.0f || Input.GetAxis(RightTriggerAxisName) >= 1.0f)
 			{
 				ResetScene();
