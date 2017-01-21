@@ -53,7 +53,8 @@ GameObject:
   - component: {fileID: 124231304988617512}
   - component: {fileID: 114275175649300184}
   - component: {fileID: 136620878666410796}
-  - component: {fileID: 114651002442022002}
+  - component: {fileID: 114575598322993454}
+  - component: {fileID: 114518392443644560}
   m_Layer: 8
   m_Name: Camera (eye)
   m_TagString: MainCamera
@@ -179,6 +180,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4865563283259832}
   - component: {fileID: 114040919381385498}
+  - component: {fileID: 136544509579245454}
+  - component: {fileID: 114481946779799580}
   m_Layer: 8
   m_Name: Controller (right)
   m_TagString: Untagged
@@ -947,6 +950,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4042614438055478}
   - component: {fileID: 114593534486678464}
+  - component: {fileID: 136565853819034114}
+  - component: {fileID: 114272605493630604}
   m_Layer: 8
   m_Name: Controller (left)
   m_TagString: Untagged
@@ -3260,6 +3265,20 @@ MonoBehaviour:
   - {x: 1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: -1.275}
   - {x: -1.65, y: 0.01, z: 1.275}
+--- !u!114 &114272605493630604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755530603713912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3067604a009da46b9880c1b0eb9d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 60000
+  falconPunchModifier: 5
+  falconPunchAxis: LeftGrip
 --- !u!114 &114275175649300184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3292,6 +3311,48 @@ MonoBehaviour:
   verbose: 0
   createComponents: 1
   updateDynamically: 1
+--- !u!114 &114481946779799580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105907506263272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3067604a009da46b9880c1b0eb9d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 60000
+  falconPunchModifier: 5
+  falconPunchAxis: RightGrip
+--- !u!114 &114518392443644560
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029809628527088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _head: {fileID: 4176178055018034}
+  _ears: {fileID: 4459090462365186}
+  wireframe: 0
+--- !u!114 &114575598322993454
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1029809628527088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3067604a009da46b9880c1b0eb9d6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 30000
+  falconPunchModifier: 10
+  falconPunchAxis: 
 --- !u!114 &114593534486678464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3306,20 +3367,6 @@ MonoBehaviour:
   index: 4
   origin: {fileID: 0}
   isValid: 0
---- !u!114 &114651002442022002
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1029809628527088}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bca9ccf900ccc84c887d783321d27e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _head: {fileID: 4176178055018034}
-  _ears: {fileID: 4459090462365186}
-  wireframe: 0
 --- !u!114 &114849619476058926
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3364,7 +3411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49a86c1078ce4314b9c4224560e031b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vrcam: {fileID: 114651002442022002}
+  vrcam: {fileID: 0}
 --- !u!124 &124231304988617512
 Behaviour:
   m_ObjectHideFlags: 1
@@ -3372,6 +3419,32 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1029809628527088}
   m_Enabled: 1
+--- !u!136 &136544509579245454
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1105907506263272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.025
+  m_Height: 0.2
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.02, z: -0.07}
+--- !u!136 &136565853819034114
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755530603713912}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.025
+  m_Height: 0.2
+  m_Direction: 2
+  m_Center: {x: 0, y: -0.02, z: -0.07}
 --- !u!136 &136620878666410796
 CapsuleCollider:
   m_ObjectHideFlags: 1
