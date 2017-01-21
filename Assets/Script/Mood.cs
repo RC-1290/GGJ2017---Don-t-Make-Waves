@@ -2,7 +2,7 @@
 
 public class Mood : MonoBehaviour {
     public float angriness = 0.0f;
-    public float angrinessPerFixedUpdate = 0.01f;
+    public float angerSpeed = 0.01f;
 
     public LayerMask playerLayer;
 
@@ -27,13 +27,18 @@ public class Mood : MonoBehaviour {
     {
         if (hittingPlayer)
         {
-            angriness += angrinessPerFixedUpdate;
-            moodColorMat.SetFloat(materialMoodId, angriness);
+            MakeMoreAngry();
         }
         if (angriness > 1.0f)
         {
             director.DudeGotAngry();
         }
+    }
+
+    public void MakeMoreAngry()
+    {
+        angriness += angerSpeed;
+        moodColorMat.SetFloat(materialMoodId, angriness);
     }
 
     protected bool isPlayerLayer(int gameObjectLayerNumber)
