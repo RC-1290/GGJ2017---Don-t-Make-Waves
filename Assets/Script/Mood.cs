@@ -4,7 +4,7 @@ public class Mood : MonoBehaviour {
     public float angriness = 0.0f;
     public float angerSpeed = 0.01f;
 
-    public LayerMask playerLayer;
+    
 
     public Color startingColor;
     public Color angryColor;
@@ -41,14 +41,9 @@ public class Mood : MonoBehaviour {
         moodColorMat.SetFloat(materialMoodId, angriness);
     }
 
-    protected bool isPlayerLayer(int gameObjectLayerNumber)
-    {
-        return ((1 << gameObjectLayerNumber) & playerLayer.value) > 0;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (isPlayerLayer(other.gameObject.layer))
+        if (director.isPlayerLayer(other.gameObject.layer))
         {
             hittingPlayer = true;
         }
@@ -56,7 +51,7 @@ public class Mood : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (isPlayerLayer(other.gameObject.layer))
+        if (director.isPlayerLayer(other.gameObject.layer))
         {
             hittingPlayer = false;
         }

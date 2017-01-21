@@ -5,6 +5,8 @@ using UnityEngine.AI;
 public class GameDirector : MonoBehaviour {
 
     public GameObject personPrefab;
+	public LayerMask playerLayer;
+	public Transform startPoint;
     public Transform target;
 
     protected List<GameObject> people = new List<GameObject>();
@@ -21,7 +23,7 @@ public class GameDirector : MonoBehaviour {
         if (bored)
         {
             // add character
-            GameObject person = Instantiate(personPrefab, transform.position, transform.rotation);
+            GameObject person = Instantiate(personPrefab, startPoint.position, transform.rotation);
             people.Add(person);
             Mood personMood = person.GetComponent<Mood>();
             personMood.director = this;
@@ -43,6 +45,11 @@ public class GameDirector : MonoBehaviour {
         }
         people.Clear();
         bored = true;
+    }
+
+	public bool isPlayerLayer(int gameObjectLayerNumber)
+    {
+        return ((1 << gameObjectLayerNumber) & playerLayer.value) > 0;
     }
 
 }

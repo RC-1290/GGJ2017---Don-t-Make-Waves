@@ -3,7 +3,7 @@
 public class HideOnLoad : MonoBehaviour {
 
 	void Start () {
-        enabled = false;
+        gameObject.active = false;
 	}
 	
 		
