@@ -4,9 +4,12 @@ public class Mood : MonoBehaviour {
     public float angriness = 0.0f;
     public float angrinessPerFixedUpdate = 0.01f;
 
-    public Collider playerCollider;
+    public LayerMask playerLayer;
+
     public Color startingColor;
     public Color angryColor;
+
+    public GameDirector director;
 
     protected Material moodColorMat;
     protected int materialMoodId = -1;
@@ -27,11 +30,15 @@ public class Mood : MonoBehaviour {
             angriness += angrinessPerFixedUpdate;
             moodColorMat.SetFloat(materialMoodId, angriness);
         }
+        if (angriness > 1.0f)
+        {
+            director.DudeGotAngry();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other == playerCollider)
+        if (((1 << other.gameObject.layer) & playerLayer.value) > 0)
         {
             hittingPlayer = true;
         }
@@ -39,7 +46,7 @@ public class Mood : MonoBehaviour {
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == playerCollider)
+        if (other.gameObject.layer == playerLayer)
         {
             hittingPlayer = false;
         }
