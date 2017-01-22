@@ -58,6 +58,7 @@ public class Mood : MonoBehaviour {
 			{//POP!
 				head.gameObject.AddComponent<Rigidbody>();
 				head.gameObject.AddComponent<BoxCollider>();
+				head.transform.localScale = neutralHeadscale;
 				head.SetParent(null);
 				headPopSound.Play();
 				head = null;

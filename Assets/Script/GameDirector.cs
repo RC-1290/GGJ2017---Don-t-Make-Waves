@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class GameDirector : MonoBehaviour {
 
-    public GameObject personPrefab;
+	public List<GameObject> personPrefabs;
 	public LayerMask playerLayer;
 	public Transform startPoint;
     public Transform target;
@@ -62,7 +62,8 @@ public class GameDirector : MonoBehaviour {
 
 	public void AddPerson(Vector3 spawn, Quaternion rotation, Vector3 target)
 	{
-		GameObject person = Instantiate(personPrefab, spawn, rotation);
+		int randomIndex = Mathf.RoundToInt(Random.Range(0, personPrefabs.Count));
+		GameObject person = Instantiate(personPrefabs[randomIndex], spawn, rotation);
         people.Add(person);
 		person.name = "Person " + people.Count;
 
