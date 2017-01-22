@@ -39,7 +39,7 @@ public class Mood : MonoBehaviour {
 
         if (angriness > 1.0f)
         {
-            director.DudeGotAngry();
+            director.PlayerStared();
         }
     }
 

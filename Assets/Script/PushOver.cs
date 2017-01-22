@@ -21,7 +21,7 @@ public class PushOver : MonoBehaviour {
 		{
 			agent.enabled = false;
 			rb.useGravity = true;
-			director.DudeGotAngry();
+			director.PlayerTouched();
 			physicsMode = true;
 		}
 	}

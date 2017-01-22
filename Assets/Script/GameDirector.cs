@@ -14,7 +14,10 @@ public class GameDirector : MonoBehaviour {
 
 	public Level1 level1;
 
-	public GameObject gameOverText;
+	public GameObject dontStareText;
+	public GameObject dontTouchText;
+	public AudioSource dontStareSound;
+	public AudioSource dontTouchSound;
 
     protected List<GameObject> people = new List<GameObject>();
 
@@ -30,18 +33,32 @@ public class GameDirector : MonoBehaviour {
         }
 		if (gameOver)
 		{
-			if (Input.GetAxis(LeftTriggerAxisName) >= 1.0f || Input.GetAxis(RightTriggerAxisName) >= 1.0f)
+			if (Input.GetKeyDown(KeyCode.Escape) || Input.GetAxis(LeftTriggerAxisName) >= 1.0f || Input.GetAxis(RightTriggerAxisName) >= 1.0f)
 			{
 				ResetScene();
 			}
 		}
     }
 
-    public void DudeGotAngry()
+    public void PlayerStared()
     {
-		gameOver = true;
-		gameOverText.SetActive(true);
+		if (!gameOver)
+		{
+			dontStareText.SetActive(true);
+			dontStareSound.Play();
+			gameOver = true;
+		}
     }
+
+	public void PlayerTouched()
+	{
+		if (!gameOver)
+		{
+			dontTouchText.SetActive(true);
+			dontTouchSound.Play();
+			gameOver = true;
+		}
+	}
 
 	public void AddPerson(Vector3 spawn, Quaternion rotation, Vector3 target)
 	{
@@ -71,7 +88,8 @@ public class GameDirector : MonoBehaviour {
         people.Clear();
         bored = true;
 		gameOver = false;
-		gameOverText.SetActive(false);
+		dontStareText.SetActive(false);
+		dontTouchText.SetActive(false);
 	}
 
 	public bool isPlayerLayer(int gameObjectLayerNumber)
