@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 
 public class Mood : MonoBehaviour {
-    public float angriness = 0.0f;
-    public float angerSpeed = 0.01f;
 
-	public float headDistMultiplier = 0.05f;
+	public float angriness = 0.0f;
+	public float angerSpeed = 0.01f;
+	public float relativeAngerReductionSpeed = 0.5f;
+	public float headDistMultiplier = 0.01f;
 	public float maxHeadDist = 0.012f;
 
 	public Transform head;
@@ -28,6 +29,11 @@ public class Mood : MonoBehaviour {
         {
             MakeMoreAngry();
         }
+		else
+		{
+			angriness -= angerSpeed * relativeAngerReductionSpeed;
+			angriness = angriness < 0.0f ? 0.0f : angriness;
+		}
 
 		// Mood based head jitter: 
 		float distanceMultiplier = headDistMultiplier * angriness;
@@ -45,7 +51,7 @@ public class Mood : MonoBehaviour {
 
     public void MakeMoreAngry()
     {
-        angriness += angerSpeed;
+		angriness += angerSpeed;
     }
 
 }
