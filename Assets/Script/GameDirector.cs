@@ -12,6 +12,8 @@ public class GameDirector : MonoBehaviour {
 	public string LeftTriggerAxisName = "LeftTrigger";
 	public string RightTriggerAxisName = "RightTrigger";
 
+	public Level1 level1;
+
     protected List<GameObject> people = new List<GameObject>();
 
     protected bool bored = true;
@@ -26,7 +28,7 @@ public class GameDirector : MonoBehaviour {
     {
         if (bored)
         {
-			AddPerson();
+			level1.RunLevel(this);
             bored = false;
         }
 		if (gameOver)
@@ -43,16 +45,18 @@ public class GameDirector : MonoBehaviour {
 		gameOver = true;
     }
 
-	protected void AddPerson()
+	public void AddPerson(Vector3 spawn, Quaternion rotation, Vector3 target)
 	{
-		GameObject person = Instantiate(personPrefab, startPoint.position, transform.rotation);
+		GameObject person = Instantiate(personPrefab, spawn, rotation);
         people.Add(person);
+		person.name = "Person " + people.Count;
 
 		Mood personMood = person.GetComponent<Mood>();
         personMood.director = this;
 		
         NavMeshAgent agent = person.GetComponent<NavMeshAgent>();
-        agent.SetDestination(target.position);
+		if (spawn != target)
+		{ agent.SetDestination(target); }
 
 		PushOver pushover = person.GetComponent<PushOver>();
 		pushover.director = this;
