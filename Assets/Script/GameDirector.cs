@@ -71,7 +71,7 @@ public class GameDirector : MonoBehaviour {
         personMood.director = this;
 		
         NavMeshAgent agent = person.GetComponent<NavMeshAgent>();
-		if (spawn != target)
+		if (target != null && spawn != target)
 		{ agent.SetDestination(target); }
 
 		PushOver pushover = person.GetComponent<PushOver>();
