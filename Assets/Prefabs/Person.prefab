@@ -441,6 +441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   angriness: 0
   angerSpeed: 0.01
+  headDistMultiplier: 0.05
+  maxHeadDist: 0.012
   head: {fileID: 4167829224515494}
   director: {fileID: 0}
 --- !u!195 &195951096524505762
