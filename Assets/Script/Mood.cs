@@ -56,7 +56,8 @@ public class Mood : MonoBehaviour {
 			}
 			if (angriness > 2.0f)
 			{//POP!
-				head.gameObject.AddComponent<Rigidbody>();
+				Rigidbody rb = head.gameObject.AddComponent<Rigidbody>();
+				rb.AddExplosionForce(300.0f, transform.position, 20.0f);
 				head.gameObject.AddComponent<BoxCollider>();
 				head.transform.localScale = neutralHeadscale;
 				head.SetParent(null);
