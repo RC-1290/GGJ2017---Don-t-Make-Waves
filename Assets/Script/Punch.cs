@@ -24,7 +24,9 @@ public class Punch : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-        float multiplier = falconPunchModifier * Input.GetAxis(falconPunchAxis);
+		float multiplier = 0.0f;
+        if (falconPunchAxis.Length > 0)
+		{ multiplier = falconPunchModifier * Input.GetAxis(falconPunchAxis); }
 		PushOver target = collision.gameObject.GetComponent<PushOver>();
 		if (target)
 		{
