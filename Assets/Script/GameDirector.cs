@@ -14,15 +14,12 @@ public class GameDirector : MonoBehaviour {
 
 	public Level1 level1;
 
+	public GameObject gameOverText;
+
     protected List<GameObject> people = new List<GameObject>();
 
     protected bool bored = true;
 	protected bool gameOver = false;
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
@@ -43,6 +40,7 @@ public class GameDirector : MonoBehaviour {
     public void DudeGotAngry()
     {
 		gameOver = true;
+		gameOverText.SetActive(true);
     }
 
 	public void AddPerson(Vector3 spawn, Quaternion rotation, Vector3 target)
@@ -73,6 +71,7 @@ public class GameDirector : MonoBehaviour {
         people.Clear();
         bored = true;
 		gameOver = false;
+		gameOverText.SetActive(false);
 	}
 
 	public bool isPlayerLayer(int gameObjectLayerNumber)

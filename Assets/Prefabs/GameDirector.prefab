@@ -53,4 +53,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   personPrefab: {fileID: 1123003299686400, guid: 9a5ce8e00e86e5746a45ae14a5cb96e6,
     type: 2}
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  startPoint: {fileID: 0}
   target: {fileID: 0}
+  LeftTriggerAxisName: LeftTrigger
+  RightTriggerAxisName: RightTrigger
+  level1: {fileID: 0}
+  gameOverText: {fileID: 0}
