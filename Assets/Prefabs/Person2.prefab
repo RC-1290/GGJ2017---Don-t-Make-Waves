@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4196719422675496}
   - component: {fileID: 82766713555264952}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Pop Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -93,6 +93,22 @@ GameObject:
   - component: {fileID: 23394652608733286}
   m_Layer: 0
   m_Name: Leg Left
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1662624012294716
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4843426292685236}
+  - component: {fileID: 82130920264899150}
+  m_Layer: 0
+  m_Name: Complaint Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1160405788283890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5863936, y: -0.88512063, z: 0.1004255}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1.7, z: 1}
   m_Children:
   - {fileID: 4646512688153698}
@@ -200,6 +216,7 @@ Transform:
   m_LocalScale: {x: 0.026021134, y: 0.10178503, z: 0.019339144}
   m_Children:
   - {fileID: 4196719422675496}
+  - {fileID: 4843426292685236}
   m_Father: {fileID: 4526176340636534}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
@@ -229,6 +246,19 @@ Transform:
   m_Father: {fileID: 4526176340636534}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!4 &4843426292685236
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662624012294716}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 38.4303, y: 30.41683, z: 9.82463}
+  m_Children: []
+  m_Father: {fileID: 4628209545983766}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23352725228363452
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -446,6 +476,86 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!82 &82130920264899150
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662624012294716}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c3fa50b942633bb439fe03b00acc290f, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!82 &82766713555264952
 AudioSource:
   m_ObjectHideFlags: 1
@@ -543,7 +653,28 @@ MonoBehaviour:
   headDistMultiplier: 0.05
   maxHeadDist: 0.012
   head: {fileID: 4628209545983766}
-  headPopSound: {fileID: 0}
+  headPopSound: {fileID: 82766713555264952}
+  complaintSound: {fileID: 82130920264899150}
+  complaints:
+  - {fileID: 8300000, guid: 210dec977a0095b458d4c1c71dd5443e, type: 3}
+  - {fileID: 8300000, guid: 5f752c85ff8ea4f459b06eb64dc3b6e8, type: 3}
+  - {fileID: 8300000, guid: 284cb58718049e347a268c7d040940ff, type: 3}
+  - {fileID: 8300000, guid: 96545a0a224534e4ca776c462ea83be3, type: 3}
+  - {fileID: 8300000, guid: c257b1cbafd3b8f46ac64fdde16711c7, type: 3}
+  - {fileID: 8300000, guid: 98597a115d9c5504a915a9fed8815e29, type: 3}
+  - {fileID: 8300000, guid: b5eab43a6c530ce499340777741baec9, type: 3}
+  - {fileID: 8300000, guid: ec2fcb7cc289da44ca1520ec6192e662, type: 3}
+  - {fileID: 8300000, guid: 95599a6b6f4e7574396758624818564e, type: 3}
+  - {fileID: 8300000, guid: b7cf9e7fcdb534242b40324c6fb5e54a, type: 3}
+  - {fileID: 8300000, guid: 4c37469e2618aa146b9d66b9a4f9758b, type: 3}
+  - {fileID: 8300000, guid: 40d9db2379ad2aa44919df5b0a69a766, type: 3}
+  - {fileID: 8300000, guid: 208a236aad5de794cbaecdef9babb1ca, type: 3}
+  - {fileID: 8300000, guid: 96fc37ad3b6a007498454a33cf10eb57, type: 3}
+  - {fileID: 8300000, guid: f3e464f6ad2545b40a40f1960928be67, type: 3}
+  - {fileID: 8300000, guid: 18dc9d671a8c2b246a4d9028613d0fb8, type: 3}
+  - {fileID: 8300000, guid: b98e1b469158d0e4dad4646b43a665e5, type: 3}
+  - {fileID: 8300000, guid: cafbd8d9dd6f92d4ea038a029478657e, type: 3}
+  - {fileID: 8300000, guid: 6becc5130e505834f961e8a7aae5fe39, type: 3}
   director: {fileID: 0}
 --- !u!114 &114644172640535316
 MonoBehaviour:

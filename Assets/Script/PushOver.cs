@@ -7,6 +7,7 @@ public class PushOver : MonoBehaviour {
 
 	protected Rigidbody rb;
 	protected NavMeshAgent agent;
+	protected Mood mood;
 
 	protected bool physicsMode = false;
 
@@ -14,6 +15,7 @@ public class PushOver : MonoBehaviour {
 	{
 		rb = GetComponent<Rigidbody>();
 		agent = GetComponent<NavMeshAgent>();
+		mood = GetComponent<Mood>();
 	}
 	public void TurnToPhysics()
 	{
@@ -23,6 +25,7 @@ public class PushOver : MonoBehaviour {
 			rb.useGravity = true;
 			director.PlayerTouched();
 			physicsMode = true;
+			mood.StartCursingRightAway();
 		}
 	}
 

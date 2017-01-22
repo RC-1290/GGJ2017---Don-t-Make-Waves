@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Mood : MonoBehaviour {
 
@@ -10,6 +11,9 @@ public class Mood : MonoBehaviour {
 
 	public Transform head;
 	public AudioSource headPopSound;
+	public AudioSource complaintSound;
+
+	public List<AudioClip> complaints;
 
     public GameDirector director;
 
@@ -48,6 +52,16 @@ public class Mood : MonoBehaviour {
 				Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist));
 			head.localPosition = neutralHeadPos + randomDir;
 
+			if (angriness > 0.4f)
+			{
+				if (!complaintSound.isPlaying)
+				{
+					int randomIndex = Mathf.RoundToInt(Random.Range(0, complaints.Count));
+					complaintSound.clip = complaints[randomIndex];
+					complaintSound.Play();
+				}
+			}
+
 			if (angriness > 1.0f)
 			{// Game Over
 				director.PlayerStared();
@@ -68,6 +82,11 @@ public class Mood : MonoBehaviour {
 		}
 
     }
+
+	public void StartCursingRightAway()
+	{
+		angriness = angriness < 0.4f ? 0.4f : angriness;
+	}
 
     public void MakeMoreAngry()
     {

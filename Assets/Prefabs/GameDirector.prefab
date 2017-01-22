@@ -51,8 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbf14c260679e547b8888ff4fe303a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  personPrefab: {fileID: 1123003299686400, guid: 9a5ce8e00e86e5746a45ae14a5cb96e6,
-    type: 2}
+  personPrefabs:
+  - {fileID: 1123003299686400, guid: 9a5ce8e00e86e5746a45ae14a5cb96e6, type: 2}
+  - {fileID: 1160405788283890, guid: 4418e4c7aaf060949bd7105f9b4cc6be, type: 2}
+  - {fileID: 1160405788283890, guid: 22081894dab65e6478ff1a98301369fc, type: 2}
+  - {fileID: 1160405788283890, guid: 7bd847d8c83f70742bf6e6a68926a348, type: 2}
   playerLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -61,4 +64,7 @@ MonoBehaviour:
   LeftTriggerAxisName: LeftTrigger
   RightTriggerAxisName: RightTrigger
   level1: {fileID: 0}
-  gameOverText: {fileID: 0}
+  dontStareText: {fileID: 0}
+  dontTouchText: {fileID: 0}
+  dontStareSound: {fileID: 0}
+  dontTouchSound: {fileID: 0}
