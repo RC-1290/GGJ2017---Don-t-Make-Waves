@@ -4,23 +4,22 @@ public class Mood : MonoBehaviour {
     public float angriness = 0.0f;
     public float angerSpeed = 0.01f;
 
-    
+	public float headDistMultiplier = 0.05f;
+	public float maxHeadDist = 0.012f;
 
-    public Color startingColor;
-    public Color angryColor;
+	public Transform head;
 
     public GameDirector director;
 
-    protected Material moodColorMat;
-    protected int materialMoodId = -1;
+	protected Vector3 neutralHeadPos;
+
     protected bool hittingPlayer = false;
 
     private void Start()
     {
         angriness = 0.0f;
+		neutralHeadPos = head.localPosition;
         hittingPlayer = false;
-        moodColorMat = GetComponent<MeshRenderer>().material;
-        materialMoodId = Shader.PropertyToID("_Mood");
     }
 
     private void FixedUpdate()
@@ -29,6 +28,15 @@ public class Mood : MonoBehaviour {
         {
             MakeMoreAngry();
         }
+
+		// Mood based head jitter: 
+		float distanceMultiplier = headDistMultiplier * angriness;
+		Vector3 randomDir = new Vector3(
+			Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist),
+			Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist),
+			Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist));
+		head.localPosition = neutralHeadPos + randomDir;
+
         if (angriness > 1.0f)
         {
             director.DudeGotAngry();
@@ -38,7 +46,6 @@ public class Mood : MonoBehaviour {
     public void MakeMoreAngry()
     {
         angriness += angerSpeed;
-        moodColorMat.SetFloat(materialMoodId, angriness);
     }
 
 }
