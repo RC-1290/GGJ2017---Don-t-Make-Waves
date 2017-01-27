@@ -1,49 +1,48 @@
-Initialize engine version: 5.5.0f3 (38b4efef76f0)
+Initialize engine version: 5.5.1f1 (88d00a7498cd)
 GfxDevice: creating device client; threaded=1
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
- 
-(Filename:  Line: 959)
-
 Direct3D:
-    Version:  Direct3D 11.0 [level 11.0]
-    Renderer: NVIDIA GeForce GTX 860M (ID=0x1392)
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
     Vendor:   NVIDIA
-    VRAM:     2018 MB
-    Driver:   20.19.15.4531
+    VRAM:     8144 MB
+    Driver:   21.21.13.7633
 Begin MonoManager ReloadAssembly
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.VR.dll (this message is harmless)
-Loading D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
-- Completed reload, in  0.035 seconds
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\System.Core.dll (this message is harmless)
-Platform assembly: D:\Documents\Code Animo\Proprietary\GGJ\GGJ2017---Don-t-Make-Waves\Don't Make Waves_Data\Managed\System.dll (this message is harmless)
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.VR.dll (this message is harmless)
+Loading C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\UnityEngine.VR.dll into Unity Child Domain
+- Completed reload, in  0.037 seconds
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Laurens Mathot\Documents\Code Animo\Proprietary\Don't Make Waves\Don't Make Waves_Data\Managed\System.dll (this message is harmless)
 <RI> Initializing input.
 <RI> Input initialized.
-desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+desktop: 3840x2160 60Hz; virtual: 8640x2175 at 0,-15
 <RI> Initialized touch support.
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
+OpenVR initialized!
  
-(Filename:  Line: 959)
+(Filename:  Line: 381)
 
-VR: OpenVR Error! OpenVR failed initialization with error code VRInitError_Init_HmdNotFound: "Hmd Not Found (108)"!
+UnloadTime: 0.572294 ms
+Connected to lighthouse:LHR-4BC75D7D
  
-(Filename:  Line: 959)
-
-UnloadTime: 2.377897 ms
-NullReferenceException: Object reference not set to an instance of an object
-  at SteamVR_Camera.OnEnable () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
 
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: f5c -> priority: 1 
-  Thread -> id: 108c -> priority: 1 
+  Thread -> id: 268 -> priority: 1 
+  Thread -> id: 52c4 -> priority: 1 
+[Model] Render model does not support components, falling back to single mesh.
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+OpenVR Shutdown
+ 
+(Filename:  Line: 815)
+
