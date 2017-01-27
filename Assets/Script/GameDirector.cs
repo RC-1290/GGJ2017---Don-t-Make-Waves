@@ -6,8 +6,6 @@ public class GameDirector : MonoBehaviour {
 
 	public List<GameObject> personPrefabs;
 	public LayerMask playerLayer;
-	public Transform startPoint;
-    public Transform target;
 
 	public string LeftTriggerAxisName = "LeftTrigger";
 	public string RightTriggerAxisName = "RightTrigger";
@@ -71,11 +69,8 @@ public class GameDirector : MonoBehaviour {
         personMood.director = this;
 		
         NavMeshAgent agent = person.GetComponent<NavMeshAgent>();
-		if (target != null && spawn != target)
+		if (spawn != target)
 		{ agent.SetDestination(target); }
-
-		PushOver pushover = person.GetComponent<PushOver>();
-		pushover.director = this;
 	}
 
 	protected void ResetScene()

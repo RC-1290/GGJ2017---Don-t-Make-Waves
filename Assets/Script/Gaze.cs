@@ -17,7 +17,7 @@ public class Gaze : MonoBehaviour {
         bool hit = Physics.Raycast( lookRay, out hitInfo, gazeDistance, hitMask);
 		if (hit)
         {
-            Mood somethingMoody = hitInfo.collider.GetComponent<Mood>();
+            Mood somethingMoody = hitInfo.collider.GetComponentInParent<Mood>();
 			
             if (somethingMoody)
             {

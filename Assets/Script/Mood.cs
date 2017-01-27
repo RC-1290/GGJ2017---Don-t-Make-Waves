@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Mood : MonoBehaviour {
 
@@ -9,13 +10,16 @@ public class Mood : MonoBehaviour {
 	public float headDistMultiplier = 0.01f;
 	public float maxHeadDist = 0.012f;
 
-	public Transform head;
+	public GameObject headPhysics;
+	public GameObject headGraphic;
 	public AudioSource headPopSound;
 	public AudioSource complaintSound;
 
 	public List<AudioClip> complaints;
 
     public GameDirector director;
+
+	protected NavMeshAgent agent;
 
 	protected Vector3 neutralHeadPos;
 	protected Vector3 neutralHeadscale;
@@ -25,9 +29,11 @@ public class Mood : MonoBehaviour {
     private void Start()
     {
         angriness = 0.0f;
-		neutralHeadPos = head.localPosition;
-		neutralHeadscale = head.localScale;
+		neutralHeadPos = headGraphic.transform.localPosition;
+		neutralHeadscale = headGraphic.transform.localScale;
         hittingPlayer = false;
+
+		agent = GetComponent<NavMeshAgent>();
     }
 
     private void FixedUpdate()
@@ -42,7 +48,7 @@ public class Mood : MonoBehaviour {
 			angriness = angriness < 0.0f ? 0.0f : angriness;
 		}
 
-		if (head)
+		if (headPhysics)
 		{
 			// Mood based head jitter: 
 			float distanceMultiplier = headDistMultiplier * angriness;
@@ -50,7 +56,7 @@ public class Mood : MonoBehaviour {
 				Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist),
 				Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist),
 				Mathf.Clamp( Random.Range(-distanceMultiplier, distanceMultiplier), -maxHeadDist, maxHeadDist));
-			head.localPosition = neutralHeadPos + randomDir;
+			headGraphic.transform.localPosition = neutralHeadPos + randomDir;
 
 			if (angriness > 0.4f)
 			{
@@ -66,22 +72,28 @@ public class Mood : MonoBehaviour {
 			{// Game Over
 				director.PlayerStared();
 
-				head.transform.localScale = neutralHeadscale * angriness;
+				headGraphic.transform.localScale = neutralHeadscale * angriness;
+
+				agent.enabled = false;
 			}
 			if (angriness > 2.0f)
 			{//POP!
-				Rigidbody rb = head.gameObject.AddComponent<Rigidbody>();
-				rb.AddExplosionForce(300.0f, transform.position, 20.0f);
-				head.gameObject.AddComponent<BoxCollider>();
-				head.transform.localScale = neutralHeadscale;
-				head.SetParent(null);
+				Rigidbody rb = headPhysics.GetComponent<Rigidbody>();
+				//Joint headJoint = head.GetComponent<Joint>();
+				rb.AddExplosionForce(600.0f, transform.position, 20.0f);
+				headGraphic.transform.localScale = neutralHeadscale;
 				headPopSound.Play();
-				head = null;
+				headPhysics = null;
 			}
 
 		}
 
     }
+
+	public void MakeFullAngry()
+	{
+		angriness = angriness < 1.0f ? 1.0f : angriness;
+	}
 
 	public void StartCursingRightAway()
 	{
